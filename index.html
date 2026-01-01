@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية رشيد الحداد | تعليم الأمن السيبراني و Linux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-gray-200 font-cairo overflow-x-hidden selection:bg-cyan-500 selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-gray-800 bg-slate-900/90 backdrop-blur-md">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" onclick="showSection('home')" class="flex items-center space-x-3 space-x-reverse rtl:space-x-reverse group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.5)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.8)] transition-all duration-300">
+                    <i class="fa-solid fa-shield-halved text-white text-xl"></i>
+                </div>
+                <span class="self-center text-2xl font-bold whitespace-nowrap text-white neon-text">أكاديمية <span class="text-cyan-400">رشيد</span></span>
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600">
+                <span class="sr-only">فتح القائمة</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-700 rounded-lg bg-slate-800 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent">
+                    <li><a href="#" onclick="showSection('home')" class="nav-link block py-2 px-3 text-white rounded md:bg-transparent md:text-cyan-400 md:p-0" aria-current="page">الرئيسية</a></li>
+                    <li><a href="#" onclick="showSection('termux')" class="nav-link block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-cyan-400 md:p-0 transition-colors">Termux</a></li>
+                    <li><a href="#" onclick="showSection('kali')" class="nav-link block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-cyan-400 md:p-0 transition-colors">Kali Linux</a></li>
+                    <li><a href="#" onclick="showSection('cyber')" class="nav-link block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-cyan-400 md:p-0 transition-colors">الأمن السيبراني</a></li>
+                    <li><a href="#" onclick="showSection('leader')" class="nav-link block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-cyan-400 md:p-0 transition-colors">القائد</a></li>
+                    <li><a href="#" onclick="showSection('about')" class="nav-link block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-cyan-400 md:p-0 transition-colors">من نحن</a></li>
+                    <li><a href="#" onclick="showSection('contact')" class="nav-link block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-cyan-400 md:p-0 transition-colors">تواصل معنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main id="main-container" class="pt-24 pb-12 px-4 md:px-8 max-w-screen-xl mx-auto min-h-screen">
+        
+        <!-- Search Bar -->
+        <div class="mb-8 relative max-w-lg mx-auto">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <i class="fa-solid fa-search text-cyan-500"></i>
+            </div>
+            <input type="text" id="search-input" class="block w-full p-4 ps-10 text-sm text-white border border-gray-600 rounded-xl bg-slate-800 focus:ring-cyan-500 focus:border-cyan-500 placeholder-gray-400 shadow-lg glow-border" placeholder="بحث ذكي عن أدوات، أوامر، أو شروحات..." required>
+        </div>
+
+        <!-- HOME SECTION -->
+        <section id="home" class="fade-in">
+            <div class="text-center py-12">
+                <div class="inline-block mb-4 px-4 py-1 rounded-full bg-cyan-900/30 border border-cyan-500/30 text-cyan-400 text-sm font-semibold tracking-wide">
+                    أكاديمية رشيد الحداد التعليمية
+                </div>
+                <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-6xl lg:text-7xl neon-text">
+                    احترف <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">الأمن السيبراني</span>
+                </h1>
+                <p class="mb-8 text-lg font-normal text-gray-400 lg:text-xl sm:px-16 lg:px-48">
+                    منصة عربية متكاملة لتعليم Termux، Kali Linux، واختبار الاختراق الأخلاقي بأسلوب عملي وشامل.
+                </p>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                    <button onclick="showSection('termux')" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 focus:ring-4 focus:ring-cyan-900 shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all transform hover:-translate-y-1">
+                        ابدأ التعلم الآن
+                        <i class="fa-solid fa-arrow-left mr-2"></i>
+                    </button>
+                    <button onclick="showSection('about')" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-gray-600 hover:bg-gray-800 focus:ring-4 focus:ring-gray-700 transition-all">
+                        تعرف علينا
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 cursor-pointer" onclick="showSection('termux')">
+                    <div class="w-12 h-12 rounded-lg bg-gray-900 border border-gray-600 flex items-center justify-center mb-4 text-cyan-400 text-2xl">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">احتراف Termux</h3>
+                    <p class="text-gray-400">تحويل هاتفك إلى منصة اختبار اختراق متكاملة مع شرح الأوامر والأدوات.</p>
+                </div>
+                
+                <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 cursor-pointer" onclick="showSection('kali')">
+                    <div class="w-12 h-12 rounded-lg bg-gray-900 border border-gray-600 flex items-center justify-center mb-4 text-blue-500 text-2xl">
+                        <i class="fa-brands fa-linux"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">نظام Kali Linux</h3>
+                    <p class="text-gray-400">دليلك الشامل لتثبيت واستخدام أشهر نظام لاختبار الاختراق والحماية.</p>
+                </div>
+
+                <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 cursor-pointer" onclick="showSection('cyber')">
+                    <div class="w-12 h-12 rounded-lg bg-gray-900 border border-gray-600 flex items-center justify-center mb-4 text-red-500 text-2xl">
+                        <i class="fa-solid fa-user-secret"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">الأمن السيبراني</h3>
+                    <p class="text-gray-400">أدوات قوية، طرق حماية، ومفاهيم أساسية لكل مهتم بمجال السايبر.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="hidden fade-in">
+             <h2 class="text-3xl font-bold text-cyan-400 mb-8 border-b border-gray-700 pb-4">من نحن</h2>
+             <div class="bg-slate-800 p-8 rounded-2xl border border-gray-700 shadow-lg">
+                <p class="text-gray-300 leading-loose text-lg mb-6">
+                    <strong class="text-white text-xl">أكاديمية رشيد الحداد</strong> هي منصة تعليمية عربية رائدة تهدف إلى إثراء المحتوى التقني العربي في مجالات الأمن السيبراني وأنظمة التشغيل مفتوحة المصدر.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-slate-900 rounded-lg border-r-4 border-cyan-500">
+                        <h3 class="text-white font-bold text-lg mb-2">رؤيتنا</h3>
+                        <p class="text-gray-400">بناء جيل عربي واعٍ تقنياً وقادر على حماية أنظمته وفهم أدوات العصر الرقمي باحترافية.</p>
+                    </div>
+                    <div class="p-4 bg-slate-900 rounded-lg border-r-4 border-blue-500">
+                        <h3 class="text-white font-bold text-lg mb-2">مهمتنا</h3>
+                        <p class="text-gray-400">تقديم شروحات عملية، خالية من الحشو، تركز على التطبيق المباشر (Hands-on Learning).</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- LEADER SECTION -->
+        <section id="leader" class="hidden fade-in">
+            <div class="flex flex-col md:flex-row gap-8 items-center bg-slate-800 p-8 rounded-2xl border border-gray-700">
+                <div class="w-full md:w-1/3 text-center">
+                    <div class="w-48 h-48 mx-auto bg-gradient-to-b from-gray-700 to-gray-900 rounded-full flex items-center justify-center border-4 border-cyan-500 shadow-[0_0_30px_rgba(6,182,212,0.3)] mb-4">
+                        <i class="fa-solid fa-user-tie text-6xl text-gray-400"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white neon-text">رشيد نجيب سنان الحداد</h2>
+                    <p class="text-cyan-400 font-semibold mt-2">مؤسس وقائد الأكاديمية</p>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                        <i class="fa-solid fa-code text-cyan-500 ml-2"></i> الخبرات والمهارات
+                    </h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full ml-3"></span>مبرمج نظم خبير.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full ml-3"></span>خبير أمن سيبراني واختبار اختراق.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full ml-3"></span>مهندس منصات تعليمية تفاعلية.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full ml-3"></span>تخصص عميق في بيئات Linux (Kali, Ubuntu, Arch).</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-cyan-500 rounded-full ml-3"></span>محترف في استخدام وتطوير أدوات Termux.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TERMUX SECTION -->
+        <section id="termux" class="hidden fade-in space-y-8">
+            <div class="section-header border-b border-gray-800 pb-4">
+                <h2 class="text-3xl font-bold text-cyan-400">قسم Termux</h2>
+                <p class="text-gray-400 mt-2">المحاكي الطرفي الأقوى للأندرويد.</p>
+            </div>
+
+            <!-- Intro Card -->
+            <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700">
+                <h3 class="text-xl font-bold text-white mb-3">ما هو Termux؟</h3>
+                <p class="text-gray-300">تطبيق مفتوح المصدر يوفر بيئة Linux كاملة على هاتفك الأندرويد دون الحاجة لترويت الجهاز. يمكنك من خلاله تثبيت لغات برمجة، أدوات اختراق، وسيرفرات.</p>
+                <div class="mt-4 p-4 bg-slate-900 rounded border-r-4 border-green-500">
+                    <h4 class="text-white font-bold text-sm mb-2">التحميل الرسمي (تجنب جوجل بلاي لأنه غير محدث):</h4>
+                    <a href="https://f-droid.org/packages/com.termux/" target="_blank" class="text-cyan-400 hover:text-cyan-300 underline">تحميل من F-Droid</a>
+                </div>
+            </div>
+
+            <!-- Command Cards -->
+            <div class="grid gap-6">
+                <!-- Cmd 1 -->
+                <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                    <h3 class="text-lg font-bold text-white mb-2">1. تحديث الحزم (أساسي)</h3>
+                    <p class="text-gray-400 text-sm mb-3">يجب تنفيذ هذا الأمر فور تثبيت التطبيق لتحديث المكتبات.</p>
+                    <div class="relative">
+                        <pre class="bg-black/80 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-gray-700"><code>pkg update && pkg upgrade -y</code></pre>
+                        <button class="copy-btn absolute top-2 left-2 bg-slate-700 hover:bg-slate-600 text-white p-2 rounded text-xs transition-colors" aria-label="نسخ الكود">
+                            <i class="fa-solid fa-copy"></i> نسخ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cmd 2 -->
+                <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                    <h3 class="text-lg font-bold text-white mb-2">2. منح صلاحيات التخزين</h3>
+                    <p class="text-gray-400 text-sm mb-3">للسماح لـ Termux بالوصول لملفات الهاتف.</p>
+                    <div class="relative">
+                        <pre class="bg-black/80 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-gray-700"><code>termux-setup-storage</code></pre>
+                        <button class="copy-btn absolute top-2 left-2 bg-slate-700 hover:bg-slate-600 text-white p-2 rounded text-xs transition-colors">
+                            <i class="fa-solid fa-copy"></i> نسخ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cmd 3 -->
+                <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                    <h3 class="text-lg font-bold text-white mb-2">3. تثبيت Git و Python</h3>
+                    <p class="text-gray-400 text-sm mb-3">أهم الأدوات لتشغيل السكربتات.</p>
+                    <div class="relative">
+                        <pre class="bg-black/80 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-gray-700"><code>pkg install git python python2 -y</code></pre>
+                        <button class="copy-btn absolute top-2 left-2 bg-slate-700 hover:bg-slate-600 text-white p-2 rounded text-xs transition-colors">
+                            <i class="fa-solid fa-copy"></i> نسخ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KALI LINUX SECTION -->
+        <section id="kali" class="hidden fade-in space-y-8">
+            <div class="section-header border-b border-gray-800 pb-4">
+                <h2 class="text-3xl font-bold text-blue-500">قسم Kali Linux</h2>
+                <p class="text-gray-400 mt-2">نظام القراصنة والمحترفين.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-2">على الكمبيوتر (PC)</h3>
+                    <p class="text-gray-400 text-sm mb-4">يتم التثبيت كنظام أساسي أو وهمي (VirtualBox).</p>
+                    <a href="https://www.kali.org/get-kali/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors">تحميل ISO الرسمي</a>
+                </div>
+                <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-2">على الهاتف (NetHunter)</h3>
+                    <p class="text-gray-400 text-sm mb-4">نسخة مخصصة للأندرويد. تتطلب روت لكامل الصلاحيات، أو Termux لنسخة Rootless.</p>
+                    <a href="https://www.kali.org/docs/nethunter/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors">شرح NetHunter</a>
+                </div>
+            </div>
+
+            <!-- Kali Commands -->
+             <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                <h3 class="text-lg font-bold text-white mb-2">تحديث النظام (Kali/Debian)</h3>
+                <p class="text-gray-400 text-sm mb-3">أمر التحديث الشامل للنظام.</p>
+                <div class="relative">
+                    <pre class="bg-black/80 text-blue-400 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-gray-700"><code>sudo apt update && sudo apt full-upgrade -y</code></pre>
+                    <button class="copy-btn absolute top-2 left-2 bg-slate-700 hover:bg-slate-600 text-white p-2 rounded text-xs transition-colors">
+                        <i class="fa-solid fa-copy"></i> نسخ
+                    </button>
+                </div>
+            </div>
+
+             <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                <h3 class="text-lg font-bold text-white mb-2">تثبيت الأدوات الشائعة</h3>
+                <p class="text-gray-400 text-sm mb-3">تثبيت الحزمة الكاملة لأهم 10 أدوات.</p>
+                <div class="relative">
+                    <pre class="bg-black/80 text-blue-400 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-gray-700"><code>sudo apt install kali-tools-top10</code></pre>
+                    <button class="copy-btn absolute top-2 left-2 bg-slate-700 hover:bg-slate-600 text-white p-2 rounded text-xs transition-colors">
+                        <i class="fa-solid fa-copy"></i> نسخ
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CYBERSECURITY SECTION -->
+        <section id="cyber" class="hidden fade-in space-y-8">
+             <div class="section-header border-b border-gray-800 pb-4">
+                <h2 class="text-3xl font-bold text-red-500">أدوات الأمن السيبراني</h2>
+                <p class="text-gray-400 mt-2">أفضل 5 أدوات تعمل بدون روت (Rootless) وكيفية استخدامها.</p>
+            </div>
+
+            <!-- Tool 1: Nmap -->
+             <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-white">1. Nmap (فحص الشبكات)</h3>
+                    <span class="bg-red-900 text-red-300 text-xs px-2 py-1 rounded">استطلاع</span>
+                </div>
+                <p class="text-gray-300 mb-4">أداة قوية لاكتشاف الأجهزة المتصلة بالشبكة وفحص المنافذ المفتوحة.</p>
+                
+                <div class="bg-slate-900 p-4 rounded mb-4">
+                    <p class="text-gray-500 text-xs mb-2">التثبيت:</p>
+                    <div class="relative mb-4">
+                         <pre class="bg-black/50 text-green-400 p-2 rounded font-mono text-sm"><code>pkg install nmap -y</code></pre>
+                         <button class="copy-btn absolute top-1 left-1 bg-slate-700 text-white px-2 py-1 rounded text-[10px]">نسخ</button>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2">أمر التشغيل (فحص موقع):</p>
+                    <div class="relative">
+                         <pre class="bg-black/50 text-green-400 p-2 rounded font-mono text-sm"><code>nmap google.com</code></pre>
+                         <button class="copy-btn absolute top-1 left-1 bg-slate-700 text-white px-2 py-1 rounded text-[10px]">نسخ</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 2: Sqlmap -->
+            <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-white">2. Sqlmap (حقن SQL)</h3>
+                    <span class="bg-yellow-900 text-yellow-300 text-xs px-2 py-1 rounded">Web Attack</span>
+                </div>
+                <p class="text-gray-300 mb-4">أداة آلية لاكتشاف واستغلال ثغرات حقن قواعد البيانات (SQL Injection).</p>
+                
+                <div class="bg-slate-900 p-4 rounded mb-4">
+                    <p class="text-gray-500 text-xs mb-2">التثبيت (Git):</p>
+                    <div class="relative mb-4">
+                         <pre class="bg-black/50 text-green-400 p-2 rounded font-mono text-sm"><code>git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev</code></pre>
+                         <button class="copy-btn absolute top-1 left-1 bg-slate-700 text-white px-2 py-1 rounded text-[10px]">نسخ</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 3: Metasploit -->
+             <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-white">3. Metasploit (مشروع الاستغلال)</h3>
+                    <span class="bg-purple-900 text-purple-300 text-xs px-2 py-1 rounded">Framework</span>
+                </div>
+                <p class="text-gray-300 mb-4">إطار عمل ضخم لتطوير وتنفيذ الثغرات الأمنية (Exploits).</p>
+                <div class="bg-slate-900 p-4 rounded">
+                     <p class="text-gray-500 text-xs mb-2">التثبيت (سكربت جاهز لـ Termux):</p>
+                    <div class="relative">
+                         <pre class="bg-black/50 text-green-400 p-2 rounded font-mono text-sm"><code>pkg install wget && wget https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/metasploit.sh && bash metasploit.sh</code></pre>
+                         <button class="copy-btn absolute top-1 left-1 bg-slate-700 text-white px-2 py-1 rounded text-[10px]">نسخ</button>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Tool 4: Hydra -->
+             <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-white">4. Hydra (تخمين كلمات المرور)</h3>
+                    <span class="bg-orange-900 text-orange-300 text-xs px-2 py-1 rounded">Brute Force</span>
+                </div>
+                <p class="text-gray-300 mb-4">أسرع أداة لكسر كلمات المرور عبر الشبكة (SSH, FTP, etc).</p>
+                <div class="bg-slate-900 p-4 rounded">
+                     <p class="text-gray-500 text-xs mb-2">التثبيت:</p>
+                    <div class="relative">
+                         <pre class="bg-black/50 text-green-400 p-2 rounded font-mono text-sm"><code>pkg install hydra -y</code></pre>
+                         <button class="copy-btn absolute top-1 left-1 bg-slate-700 text-white px-2 py-1 rounded text-[10px]">نسخ</button>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Tool 5: Sherlock -->
+             <div class="cyber-card p-6 rounded-xl bg-slate-800 border border-gray-700 searchable-item">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-white">5. Sherlock (OSINT)</h3>
+                    <span class="bg-blue-900 text-blue-300 text-xs px-2 py-1 rounded">Information Gathering</span>
+                </div>
+                <p class="text-gray-300 mb-4">البحث عن حسابات المستخدمين عبر منصات التواصل الاجتماعي.</p>
+                <div class="bg-slate-900 p-4 rounded">
+                     <p class="text-gray-500 text-xs mb-2">التثبيت:</p>
+                    <div class="relative">
+                         <pre class="bg-black/50 text-green-400 p-2 rounded font-mono text-sm"><code>git clone https://github.com/sherlock-project/sherlock.git && cd sherlock && pip install -r requirements.txt</code></pre>
+                         <button class="copy-btn absolute top-1 left-1 bg-slate-700 text-white px-2 py-1 rounded text-[10px]">نسخ</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="hidden fade-in">
+            <h2 class="text-3xl font-bold text-cyan-400 mb-8 text-center">تواصل معنا</h2>
+            <div class="max-w-2xl mx-auto bg-slate-800 p-8 rounded-2xl border border-gray-700 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+                <div class="space-y-8">
+                    <a href="mailto:rshedzopr2@gmail.com" class="flex items-center p-4 bg-slate-900 rounded-xl hover:bg-slate-700 transition-colors group">
+                        <div class="w-12 h-12 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="mr-4">
+                            <p class="text-sm text-gray-500">البريد الإلكتروني</p>
+                            <p class="text-white font-mono dir-ltr">rshedzopr2@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/967738090067" target="_blank" class="flex items-center p-4 bg-slate-900 rounded-xl hover:bg-slate-700 transition-colors group">
+                         <div class="w-12 h-12 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div class="mr-4">
+                            <p class="text-sm text-gray-500">واتساب</p>
+                            <p class="text-white font-mono dir-ltr">+967 738 090 067</p>
+                        </div>
+                    </a>
+
+                    <div class="flex items-center p-4 bg-slate-900 rounded-xl">
+                         <div class="w-12 h-12 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="mr-4">
+                            <p class="text-sm text-gray-500">الموقع</p>
+                            <p class="text-white">اليمن – تعز</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-gray-800 text-center p-6 mt-12">
+        <p class="text-gray-500">
+            © 2024 <span class="text-cyan-400">Rashid Academy</span>. جميع الحقوق محفوظة.
+        </p>
+        <p class="text-gray-600 text-sm mt-2">
+            تم التطوير بواسطة <span class="text-gray-400">Rashid Al-Haddad</span>
+        </p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 left-5 bg-cyan-600 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center">
+        <i class="fa-solid fa-check-circle ml-2"></i>
+        <span>تم نسخ الأمر بنجاح!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
